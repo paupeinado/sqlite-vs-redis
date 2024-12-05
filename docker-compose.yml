@@ -1,0 +1,30 @@
+services:
+  app-sqlite:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./dist:/opt/app
+    command: ["node", "app-sqlite.js"]
+    environment:
+      - DB_PATH=/opt/db
+      - SERVER_PORT=3000
+
+  app-redis:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/opt/app
+    command: ["node", "dist/app-redis.js"]
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SERVER_PORT=4000
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
