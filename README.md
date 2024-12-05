@@ -25,6 +25,12 @@ This project demonstrates the use of SQLite and Redis for managing and retrievin
    yarn install
    ```
 
+3. Build assets
+
+   ```sh
+   yarn run build
+   ```
+
 ## Running the Applications
 
 ### Using Docker Compose

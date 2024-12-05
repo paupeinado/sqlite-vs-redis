@@ -7,7 +7,8 @@
     "node": ">= 22.10.0"
   },
   "scripts": {
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "build": "tsc"
   },
   "dependencies": {
     "better-sqlite3": "^11.6.0",
